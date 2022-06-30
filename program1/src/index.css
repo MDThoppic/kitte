@@ -1,0 +1,73 @@
+body {
+  background-image: url('./compoent/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
+
+.from {
+  position: static;
+  padding-left: 30%;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  width: 90%;
+  height: 70%;
+  background-origin: padding-box;
+  border-radius: 12px;
+
+}
+
+.title {
+  position: absolute;
+  text-align: center;
+  width: 385px;
+  height: auto;
+  background-color:rgba(165, 192, 183, 0.534);
+  border-left: 2pc;
+  font-size: 20px;
+}
+
+.login {
+  background-color: rgba(253, 252, 252, 0.596);
+  position: relative;
+  width: 30%;
+  height: 80%;
+  align-self: center;
+  background-size: cover;
+  border-block-color: blue;
+  margin: auto;
+  background-repeat: no-repeat;
+}
+
+.in {
+  height: 300px;
+  border: yellow;
+  animation-name: revert;
+  padding: 10px;
+  margin: auto;
+}
+
+input#UserNmae {
+  border-radius: 20px;
+  margin: 10px;
+  width: 256px;
+  height: 30px;
+  text-align: center;
+}
+
+.login input {
+  border-radius: 20px;
+  margin: 10px;
+  width: 256px;
+  height: 30px;
+  text-align: center;
+}
+
+.login button {
+  border-radius: 20px;
+  margin: 10px;
+  width: 256px;
+  height: 30px;
+  text-align: center;
+}
