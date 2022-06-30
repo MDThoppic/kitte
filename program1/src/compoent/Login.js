@@ -1,39 +1,41 @@
 import React from 'react'
 
-
-
 export default function Login() {
-    const sumbit=()=>{
+    var attempt = 3;
+    const sumbit = () => {
         var UserName = document.getElementById('UserName').value;
         var password = document.getElementById('password').value;
-       if (UserName === "" && password === "") {
-          alert("login sucessfully");
-          return false;
+        if (UserName === "" && password === "") {
+            alert("login sucessfully");
+            //reload(false);
+           // location.sumbit();
         }
         else {
-        alert("not valid");
-      }   
-   }
-    return (        
-        <div className='in'>
-            <from className='from' action='App.js' method='dialog'>
-                <div className='login'>
-                    <div className='title'>login</div>
-                    <br/>
-                    <input type="text" placeholder="UserName" id="UserName" /><br />
+            attempt--;
+            alert("you have left " + attempt + " attempt;");
 
-                    <input type="text" placeholder="password" id="password" /><br />
+            if (attempt == 0) {
+                var UserName = document.getElementById('UserName').disabled = true;
+                var UserName = document.getElementById('password').disabled = true;
+                
+            }
+        }
+    }
+    return (
 
-                    <input type="submit" value="login" onClick={sumbit}/><br></br> <br />
-                    {/*<span className='LOGIN'>Forget
-                       <a hraf='#'>password?</a>
-                        <a hraf='#'>/ Create login</a>    </span>*/}
-
-                </div>
+        <div className='from'>
+            <h1>login</h1>
+            <from className='login' action='App.js' method='dialog'>
+                <input type="text" placeholder="UserName" id="UserName" /><br />
+                <input type="Password" placeholder="password" id="password" required="" /><br />
+                <button type="submit" value="login" onClick={sumbit} >Login</button>
+                <br></br> <br />
+                <span className='LOGIN'>Forget
+                    <a hraf='#'>password?</a>
+                    <a hraf='#'>/ Create login</a>
+                </span>
             </from>
         </div>
-        
-
     )
 }
 Login();
