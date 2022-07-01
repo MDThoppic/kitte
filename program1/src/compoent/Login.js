@@ -1,12 +1,26 @@
 import React from 'react'
 
+let UserName=document.getElementById('UserName')
+
+UserName.append(Login());
+
+let password=document.getElementById('password')
+
+password.append(Login());
+//fetch function
+fetch("http://localhost:3000/user")
+.then(res=>res.json())
+.then(json=>console(json))
+
 export default function Login() {
     var attempt = 3;
     const sumbit = () => {
-        var UserName = document.getElementById('UserName').value;
-        var password = document.getElementById('password').value;
-        if (UserName === "" && password === "") {
+        let UserName = document.getElementById('UserName').value;
+        let password = document.getElementById('password').value;
+        
+        if (UserName ===$(UserName) && password ===$(password) ) {
             alert("login sucessfully");
+            return false;
             //reload(false);
            // location.sumbit();
         }
@@ -14,10 +28,10 @@ export default function Login() {
             attempt--;
             alert("you have left " + attempt + " attempt;");
 
-            if (attempt == 0) {
-                var UserName = document.getElementById('UserName').disabled = true;
-                var UserName = document.getElementById('password').disabled = true;
-                
+            if (attempt === 0) {
+                 UserName = document.getElementById('UserName').disabled = true;
+                 password = document.getElementById('password').disabled = true;
+                return true;
             }
         }
     }
