@@ -1,55 +1,54 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
+import Axios from 'axios';
 
-let UserName=document.getElementById('UserName')
+function Login() {
+    //const [User,setuser]=useState([]);
+    const [UserName,setuserName]=useState('');
+    const [password,setpassword]=useState('');
 
-UserName.append(Login());
+    fetch("http://localhost:3000/user")
+    .then(res => res.json())
+    .then(json => console(json))
 
-let password=document.getElementById('password')
+    useEffect(()=>{
+        loadData();
+    },[]);
 
-password.append(Login());
-//fetch function
-fetch("http://localhost:3000/user")
-.then(res=>res.json())
-.then(json=>console(json))
-
-export default function Login() {
-    var attempt = 3;
-    const sumbit = () => {
-        let UserName = document.getElementById('UserName').value;
-        let password = document.getElementById('password').value;
-        
-        if (UserName ===$(UserName) && password ===$(password) ) {
-            alert("login sucessfully");
-            return false;
-            //reload(false);
-           // location.sumbit();
-        }
-        else {
-            attempt--;
-            alert("you have left " + attempt + " attempt;");
-
-            if (attempt === 0) {
-                 UserName = document.getElementById('UserName').disabled = true;
-                 password = document.getElementById('password').disabled = true;
-                return true;
-            }
-        }
+    const loadData = async()=>{
+        const response =await Axios.get('http://localhost:3000/user');
+        console.log(response.data);
     }
+    const sumbit = (e) => {
+
+        e.preventDefult();
+        Axios.post('http://localhost:3000/user',{
+            UserName,password
+        }).then(()=>{
+            setuserName("");
+            setpassword("");
+        }).catch((err)=>{
+            console.log(err);
+        })
+
+    }
+
+
     return (
 
-        <div className='from'>
+        <div className='from-control'>
             <h1>login</h1>
-            <from className='login' action='App.js' method='dialog'>
-                <input type="text" placeholder="UserName" id="UserName" /><br />
-                <input type="Password" placeholder="password" id="password" required="" /><br />
-                <button type="submit" value="login" onClick={sumbit} >Login</button>
+            <from className='login-control'>
+                <input type="text" placeholder="UserName"       /><br />
+                <input type="Password" placeholder="password"   /><br />
+                <button type="submit" value="login" onClick={sumbit()} >Login</button>
                 <br></br> <br />
-                <span className='LOGIN'>Forget
+                {/* <span className='LOGIN'>Forget
                     <a hraf='#'>password?</a>
-                    <a hraf='#'>/ Create login</a>
-                </span>
+                    <a hraf='#'>  Create login</a>
+                </span> */}
             </from>
         </div>
+
     )
 }
-Login();
+export default Login();

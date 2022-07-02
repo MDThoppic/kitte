@@ -8,7 +8,7 @@ body {
 
 }
 
-/* .in{
+ /* .in{
   position: absolute;
   top: 50px;
   left: 30px;
@@ -17,7 +17,7 @@ body {
   padding: 40px;
   box-sizing: border-box;
   
-} */
+}  */
 
 .from {
   position: absolute;
@@ -39,7 +39,7 @@ body {
 }
 
 .login {
-  background-color: rgba(253, 252, 252, 0.596);
+  background: rgb(0, 0, 0,);
   position: relative;
   width: 30%;
   height: 80%;

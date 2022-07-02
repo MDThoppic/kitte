@@ -1,19 +1,15 @@
 {
   "user": [
     {
-      "id": 1,
-      "username": "json-server",
-      "password": "typicode"
-    },
-    {
-      "id": 2,
-      "username": "json-server",
-      "password": "typicode"
-    },{
-      "id": 3,
-      "username": "json-server",
-      "password": "typicode"
-    }
+      "id":1,
+      "name":"mohamud",
+      "password":123456789
+   },
+   {
+    "id":2,
+    "name":"Tamil",
+    "password":987654321
+ }
+   
   ]
-  
 }

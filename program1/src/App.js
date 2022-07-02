@@ -1,23 +1,16 @@
 //import logo from './logo.svg';
 import './App.css';
 import './index.css'
+//import Axios from "axios"
 import Login from "./compoent/Login";
+//import React, { useEffect,useState } from 'react'
 
 //import { render } from '@testing-library/react';
 
 function App() {
+ 
+  
 
-  //  const Validate =()=>{      
-  //   var UserName = document.getElementById('UserName').value;
-  //   var password = document.getElementById('password').value;
-  //   if (UserName === "mohamud" && password === "123456") {
-  //     alert("login sucessfully");
-  //     return false;
-  //   }
-  //   else {
-  //     alert("not valid");
-  //   }         
-  // }
   
   return (
     <div className='App'>
