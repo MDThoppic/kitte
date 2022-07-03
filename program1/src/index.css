@@ -19,7 +19,7 @@ body {
   
 }  */
 
-.from {
+.login {
   position: absolute;
   padding: 40px;
   width: 400px;
@@ -31,14 +31,14 @@ body {
   box-shadow: 0 15px 25px rgba(0,0,0,.5);
 }
 
-.from h1 {
+.login from h1 {
   margin: 0 0 30px;
   padding: 0;
   color: rgba(12, 12, 12, 0.589);
   text-align: center;
 }
 
-.login {
+/* .login {
   background: rgb(0, 0, 0,);
   position: relative;
   width: 30%;
@@ -48,7 +48,7 @@ body {
   border-block-color: blue;
   margin: auto;
   background-repeat: no-repeat;
-}
+} */
 
 .in {
   height: 300px;
@@ -68,7 +68,7 @@ input#UserNmae {
   transform: translate(-50%,-50%);
 }
 
-.login input {
+.from input {
   border-radius: 20px;
   margin: 10px;
   width: 256px;

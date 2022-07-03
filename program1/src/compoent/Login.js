@@ -1,54 +1,57 @@
-import React,{useState,useEffect} from 'react'
+import React, { useState } from 'react'
 import Axios from 'axios';
 
 function Login() {
-    //const [User,setuser]=useState([]);
-    const [UserName,setuserName]=useState('');
-    const [password,setpassword]=useState('');
+    // const [User,setuser]=useState([]);
+    let [UserName, setuserName] = useState("");
+    let [password, setpassword] = useState("");
 
-    fetch("http://localhost:3000/user")
-    .then(res => res.json())
-    .then(json => console(json))
 
-    useEffect(()=>{
-        loadData();
-    },[]);
 
-    const loadData = async()=>{
-        const response =await Axios.get('http://localhost:3000/user');
-        console.log(response.data);
-    }
-    const sumbit = (e) => {
+   const submit = (e) => {
 
         e.preventDefult();
         Axios.post('http://localhost:3000/user',{
             UserName,password
         }).then(()=>{
-            setuserName("");
-            setpassword("");
+            setuserName("");setpassword("");
         }).catch((err)=>{
             console.log(err);
         })
 
+        UserName = document.getElementById("UserName").value;
+        password = document.getElementById("password").value;
+        
+        if ("setUserName"===UserName && "setpassword"===password) {
+            window.alert("login successfull")
+            console.log(UserName, password);
+            
+        }
+        else {
+            window.alert("invalid enters")
+
+            
+        }
     }
 
 
     return (
 
-        <div className='from-control'>
-            <h1>login</h1>
-            <from className='login-control'>
-                <input type="text" placeholder="UserName"       /><br />
-                <input type="Password" placeholder="password"   /><br />
-                <button type="submit" value="login" onClick={sumbit()} >Login</button>
+        <form className='login' action='Login.js' method='dialog'>
+            <div className='from'>
+                <h1>login</h1>
+                <input type="text" placeholder="UserName" value={UserName} id="userName" required="" onChange={(e) => setuserName(e.target.value)} /><br />
+                <input type="Password" placeholder="password" value={password} id="password" required="" onChange={(e) => setpassword(e.target.value)} /><br />
+                <button type="submit" onClick={submit}  >Login</button>
                 <br></br> <br />
                 {/* <span className='LOGIN'>Forget
                     <a hraf='#'>password?</a>
                     <a hraf='#'>  Create login</a>
                 </span> */}
-            </from>
-        </div>
+            </div>
+        </form>
+
 
     )
 }
-export default Login();
+export default Login;
