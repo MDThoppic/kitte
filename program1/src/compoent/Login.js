@@ -10,7 +10,7 @@ function Login() {
 
    const submit = (e) => {
 
-        e.preventDefult();
+        
         Axios.post('http://localhost:3000/user',{
             UserName,password
         }).then(()=>{
@@ -22,7 +22,7 @@ function Login() {
         UserName = document.getElementById("UserName").value;
         password = document.getElementById("password").value;
         
-        if ("setUserName"===UserName && "setpassword"===password) {
+        if (UserName==="setuseName" && password==="setpassword") {
             window.alert("login successfull")
             console.log(UserName, password);
             
