@@ -11,13 +11,13 @@ function Login() {
    const submit = (e) => {
 
         
-        Axios.post('http://localhost:3000/user',{
-            UserName,password
-        }).then(()=>{
-            setuserName("");setpassword("");
-        }).catch((err)=>{
-            console.log(err);
-        })
+        // Axios.post('http://localhost:3000/user',{
+        //     UserName,password
+        // }).then(()=>{
+        //     setuserName("");setpassword("");
+        // }).catch((err)=>{
+        //     console.log(err);
+        // })
 
         UserName = document.getElementById("UserName").value;
         password = document.getElementById("password").value;
