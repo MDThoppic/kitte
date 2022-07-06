@@ -1,15 +1,22 @@
 import React, { useState } from 'react'
-import Axios from 'axios';
+import './Login.css'
+// import Dashboard from "./Dashboard";
+//import Axios from 'axios';
 
-function Login() {
+
+function Login () {
+
+    
+    
     // const [User,setuser]=useState([]);
-    let [UserName, setuserName] = useState("");
-    let [password, setpassword] = useState("");
+    const [UserName, setuserName] = useState("");
+    const [password, setpassword] = useState("");
 
 
 
-   const submit = (e) => {
+   const submit = (event) => {
 
+    // event.preventDefult();
         
         // Axios.post('http://localhost:3000/user',{
         //     UserName,password
@@ -18,18 +25,21 @@ function Login() {
         // }).catch((err)=>{
         //     console.log(err);
         // })
-
-        UserName = document.getElementById("UserName").value;
-        password = document.getElementById("password").value;
         
-        if (UserName==="setuseName" && password==="setpassword") {
+        //local validation
+        let UserName = document.getElementById("UserName").value;
+        let password = document.getElementById("password").value;
+        
+        if (UserName==="Mohamud" && password==="1234567") {
             window.alert("login successfull")
             console.log(UserName, password);
+                   
             
         }
         else {
             window.alert("invalid enters")
-
+            
+            event.preventDefult();
             
         }
     }
@@ -40,8 +50,8 @@ function Login() {
         <form className='login' action='Login.js' method='dialog'>
             <div className='from'>
                 <h1>login</h1>
-                <input type="text" placeholder="UserName" value={UserName} id="userName" required="" onChange={(e) => setuserName(e.target.value)} /><br />
-                <input type="Password" placeholder="password" value={password} id="password" required="" onChange={(e) => setpassword(e.target.value)} /><br />
+                <input type="text" placeholder="UserName" value={UserName} id="UserName" required onChange={(e) => setuserName(e.target.value)} /><br />
+                <input type="Password" placeholder="password" value={password} id="password" required onChange={(e) => setpassword(e.target.value)} /><br />
                 <button type="submit" onClick={submit}  >Login</button>
                 <br></br> <br />
                 {/* <span className='LOGIN'>Forget

@@ -1,26 +1,30 @@
 //import logo from './logo.svg';
 import './App.css';
 import './index.css'
-//import Axios from "axios"
+import './compoent/Login.css'
 import Login from "./compoent/Login";
-//import React, { useEffect,useState } from 'react'
+// import Home from "./compoent/Home";
+// import About from "./compoent/About";
+// import Support from "./compoent/Support";
+// import Book from "./compoent/Book";
+import { Fooder } from "./compoent/Fooder";
+// import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+// import { BrowserRouter, BrowserRouter as Router, Route } from 'react-router-dom'
 
-//import { render } from '@testing-library/react';
+const App=()=> {
 
-function App() {
- 
-  
-
-  
   return (
     <div className='App'>
-      <Login />
+
+      
+          <Login />
+          
+
+      <Fooder />
+
     </div>
   );
-  
-  
+
+
 }
-
-
-
 export default App;

@@ -2,7 +2,7 @@
   text-align: center;
   background-color:rgba(249, 251, 253, 0.61);
   /*box-shadow: 11px 11px;*/
-  background-image: url('./compoent/background.jpg');
+  /* background-image: url(''); */
   background-size: cover;
   background-repeat: no-repeat;
 }
