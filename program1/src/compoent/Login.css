@@ -1,0 +1,63 @@
+/* body {
+    background: url('./background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: auto;
+    padding: 0; 
+  
+  } */
+.login {
+    position: absolute;
+    padding: 40px;
+    width: 400px;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%,-50%);
+    background: rgb(0,0,0,0,.8);
+    border-radius: 12px;
+    box-shadow: 0 15px 25px rgba(0,0,0,.5);
+  }
+  
+  .login from h1 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: rgba(12, 12, 12, 0.589);
+    text-align: center;
+  }
+  
+  
+  .in {
+    height: 300px;
+    border: yellow;
+    animation-name: revert;
+    padding: 10px;
+    margin: auto;
+  }
+  
+  input#UserNmae {
+    border-radius: 20px;
+    margin: 10px;
+    width: 256px;
+    height: 30px;
+    text-align: center;
+    background: rgb(0,0,0,0,.8);
+    transform: translate(-50%,-50%);
+  }
+  
+  .from input {
+    border-radius: 20px;
+    margin: 10px;
+    width: 256px;
+    height: 30px;
+    text-align: center;
+    background: rgb(0,0,0,0,.11);
+  }
+  
+  .login button {
+    border-radius: 20px;
+    margin: 10px;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    background: rgb(0,0,0,0,.8);
+  }

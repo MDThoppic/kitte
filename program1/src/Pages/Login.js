@@ -4,20 +4,20 @@ import './Login.css'
 //import Axios from 'axios';
 
 
-function Login () {
+const Login = () => {
 
-    
-    
+
+
     // const [User,setuser]=useState([]);
     const [UserName, setuserName] = useState("");
     const [password, setpassword] = useState("");
 
 
 
-   const submit = (event) => {
+    const submit = (event) => {
 
-    // event.preventDefult();
-        
+        // event.preventDefult();
+
         // Axios.post('http://localhost:3000/user',{
         //     UserName,password
         // }).then(()=>{
@@ -25,22 +25,22 @@ function Login () {
         // }).catch((err)=>{
         //     console.log(err);
         // })
-        
+
         //local validation
         let UserName = document.getElementById("UserName").value;
         let password = document.getElementById("password").value;
-        
-        if (UserName==="Mohamud" && password==="1234567") {
+
+        if (UserName === "Mohamud" && password === "1234567") {
             window.alert("login successfull")
             console.log(UserName, password);
-                   
-            
+
+
         }
         else {
             window.alert("invalid enters")
-            
+
             event.preventDefult();
-            
+
         }
     }
 
@@ -62,6 +62,6 @@ function Login () {
         </form>
 
 
-    )
-}
+    );
+};
 export default Login;

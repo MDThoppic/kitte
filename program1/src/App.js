@@ -2,26 +2,29 @@
 import './App.css';
 import './index.css'
 import './compoent/Login.css'
-import Login from "./compoent/Login";
-// import Home from "./compoent/Home";
-// import About from "./compoent/About";
-// import Support from "./compoent/Support";
+import Login from "./Pages/Login";
+// import Home from "./Pages/Home";
+// import About from "./Pages/About";
+// import Support from "./Pages/Support";
 // import Book from "./compoent/Book";
-import { Fooder } from "./compoent/Fooder";
+// import  Navbar  from './HeaderFooter/Navbar'
+// import { Fooder } from "./HeaderFooter/Fooder";
 // import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-// import { BrowserRouter, BrowserRouter as Router, Route } from 'react-router-dom'
+import {  BrowserRouter as  Router, Route } from 'react-router-dom'
 
-const App=()=> {
+function App() {
 
   return (
-    <div className='App'>
-
+    <div className='App'> 
+<Router>
       
-          <Login />
-          
-
-      <Fooder />
-
+      
+        {/* <Route path='/' exact element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/Support' element={<Support />} /> */}
+        <Route path='/Login' element={<Login />} />
+     
+    </Router>
     </div>
   );
 
