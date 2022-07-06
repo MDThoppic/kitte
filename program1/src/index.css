@@ -1,0 +1,8 @@
+body {
+    background: none;
+    background: url('./compoent/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: auto;
+    padding: 0;
+}

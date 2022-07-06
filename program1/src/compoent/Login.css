@@ -13,7 +13,7 @@
     top: 50%;
     left: 60%;
     transform: translate(-50%,-50%);
-    background: rgb(0,0,0,0,.8);
+    background: rgba(12, 12, 12, 0.459);
     border-radius: 12px;
     box-shadow: 0 15px 25px rgba(0,0,0,.5);
   }

@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import './Login.css'
+import { Footer } from '../HeaderFooter/Footer';
+
 // import Dashboard from "./Dashboard";
 //import Axios from 'axios';
 
 
-const Login = () => {
+function Login  ()  {
 
 
 
@@ -46,7 +47,7 @@ const Login = () => {
 
 
     return (
-
+        <div>
         <form className='login' action='Login.js' method='dialog'>
             <div className='from'>
                 <h1>login</h1>
@@ -60,8 +61,8 @@ const Login = () => {
                 </span> */}
             </div>
         </form>
-
-
-    );
-};
+        <Footer />
+     </div>
+    )
+}
 export default Login;
