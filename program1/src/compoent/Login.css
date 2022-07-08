@@ -16,6 +16,8 @@
     background: rgba(12, 12, 12, 0.459);
     border-radius: 12px;
     box-shadow: 0 15px 25px rgba(0,0,0,.5);
+    background-size: cover;
+    background-clip: content-box;
   }
   
   .login from h1 {
