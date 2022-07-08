@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { Footer } from "./Footer";
 
 
@@ -11,13 +12,13 @@ function Navbar() {
            
                  
             <ul className='nav_menu'>
-               <a href="C:\Users\ELCOT\kitte\program1\src\Pages\Home.js" className='nav_link'>Home</a> 
-                
-               <a href="#" className='nav_link'>About</a> 
-                
-               <a href="#" className='nav_link'>Support</a> 
                
-            <input type="search" placeholder='search...' name="search" id="search" className='fa fa-search'/><button type="submit"><i class="fa fa-search"></i></button>
+            <NavLink className="link" to="/">Home</NavLink>
+            <NavLink className="link" to="/About">About</NavLink>
+            <NavLink className="link" to="/Support">Support</NavLink>
+            <NavLink className="link" to="/Login">Signin </NavLink>
+
+            <input type="search" placeholder='search...' name="search" id="search" /><button type="submit"><i class="fa fa-search"></i></button>
             
             </ul>
             
