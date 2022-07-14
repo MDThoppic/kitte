@@ -1,0 +1,60 @@
+.App {
+    margin: 0;
+    padding: 0;
+}
+
+.nav {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(16, 16, 17, 0.452);
+}
+
+.nav_name {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 15px;
+    color: rgb(245, 248, 250);
+
+}
+
+.nav_menu {
+    display: flex;
+    text-decoration: none;
+    justify-content: space-between;
+}
+
+.link {
+    padding: 4px;
+    text-decoration: none;
+    color: wheat;
+    word-spacing: 10px;
+    margin-left: 10px;
+    /* text-transform: uppercase; */
+}
+
+.link:hover {
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+}
+
+.link.active {
+    background: green;
+    color: red;
+}
+.nav_menu button{
+    display: flex;
+}
+ 
+/* device change mode */
+@media screen and (max-width:600px){
+    .nav{
+        display:inline-flex;
+        width: 100%;
+    }
+    .nav_name{
+        font: size 15px; ;
+    }
+}

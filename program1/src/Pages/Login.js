@@ -1,68 +1,59 @@
 import React, { useState } from 'react'
 import { Footer } from '../HeaderFooter/Footer';
-
-// import Dashboard from "./Dashboard";
-//import Axios from 'axios';
-
-
-function Login  ()  {
+import Axios from 'axios';
+import { Link } from 'react-router-dom';
+// import '../../db.json';
 
 
+
+
+
+function Login() {
 
     // const [User,setuser]=useState([]);
     const [UserName, setuserName] = useState("");
     const [password, setpassword] = useState("");
 
 
+    // event.preventDefult();
 
-    const submit = (event) => {
+     const Submit = () => {
+        console.log(UserName, password);
 
         // event.preventDefult();
 
-        // Axios.post('http://localhost:3000/user',{
-        //     UserName,password
-        // }).then(()=>{
-        //     setuserName("");setpassword("");
-        // }).catch((err)=>{
-        //     console.log(err);
-        // })
+        Axios.get('../../db.json')
+        .then(response => {
+            console.log(response.data);
+            alert('sucessfull');
 
-        //local validation
-        let UserName = document.getElementById("UserName").value;
-        let password = document.getElementById("password").value;
+        }).catch(err => {
+            window.alert('unscessfull')
+            
+            console.log(err);
+        })
 
-        if (UserName === "Mohamud" && password === "1234567") {
-            window.alert("login successfull")
-            console.log(UserName, password);
-
-
-        }
-        else {
-            window.alert("invalid enters")
-
-            event.preventDefult();
-
-        }
     }
 
+    const Register =()=>{
+
+    }
 
     return (
         <div>
-        <form className='login' action='Login.js' method='dialog'>
-            <div className='from'>
-                <h1>login</h1>
-                <input type="text" placeholder="UserName" value={UserName} id="UserName" required onChange={(e) => setuserName(e.target.value)} /><br />
-                <input type="Password" placeholder="password" value={password} id="password" required onChange={(e) => setpassword(e.target.value)} /><br />
-                <button type="submit" onClick={submit}  >Login</button>
-                <br></br> <br />
-                {/* <span className='LOGIN'>Forget
-                    <a hraf='#'>password?</a>
-                    <a hraf='#'>  Create login</a>
-                </span> */}
-            </div>
-        </form>
-        <Footer />
-     </div>
+            <form className='login' action='Login.js' method='dialog'>
+                <div className='from'>
+                    <h1>login</h1>
+                    <input type="text" placeholder="UserName" value={UserName} id="UserName" onChange={(e) => setuserName(e.target.value)} /><br />
+                    <input type="Password" placeholder="password" value={password} id="password" onChange={(e) => setpassword(e.target.value)} /><br />
+                    <button type="submit" onClick={Submit}  >Login</button>
+                    <br></br> <br />
+                    <Link to="/Register" onClick={Register}>Creater & Resgiter</Link>
+
+                </div>
+            </form>
+            <Footer />
+        </div>
     )
 }
 export default Login;

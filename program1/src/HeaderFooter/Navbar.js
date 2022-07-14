@@ -8,7 +8,7 @@ function Navbar() {
     <div>
         
         <nav className='nav'>
-            <h1 className='nav_name'>Picker</h1>
+            <h1 className='nav_name'>Pickaar</h1>
            
                  
             <ul className='nav_menu'>
