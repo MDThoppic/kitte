@@ -5,11 +5,12 @@ import './compoent/Login.css';
 import './HeaderFooter/Navbar.css';
 import { Footer } from "./HeaderFooter/Footer";
 import Navbar from './HeaderFooter/Navbar';
-import Home from  './Pages/Home';
-import About from './Pages/About';
-import Support from './Pages/Support';
+import Home from  './Screen/Home';
+import About from './Screen/About';
+import Support from './Screen/Support';
 import { Route, Routes } from 'react-router-dom';
-import Login from './Pages/Login';
+import Login from './Screen/Login';
+import Register from './Screen/Register';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path='/About' element={<About />}/>
         <Route path='/Support' element={<Support />}/>
         <Route path='/Login' element={<Login />}/>
+        <Route path='/Login/Register' element={<Register />}/>
       </Routes>
       <Footer /> 
     </div>

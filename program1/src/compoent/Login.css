@@ -63,3 +63,11 @@
     text-align: center;
     background: rgb(0,0,0,0,.8);
   }
+  .create{
+    padding: 10px;
+    padding-bottom: 10px;
+    color:wheat;
+  }
+  .from{
+    margin: 50px;
+  }

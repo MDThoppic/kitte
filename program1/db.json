@@ -1,15 +1,5 @@
 {
-  "user": [
-    {
-      "id": 1,
-      "UserName": "mohamud",
-      "password": 123456789
-    },
-    {
-      "id": 2,
-      "UserName": "Tamil",
-      "password": 987654321
-    },
+  "Detail": [
     {
       "UserName": "Mohamud",
       "password": 1234567890,
