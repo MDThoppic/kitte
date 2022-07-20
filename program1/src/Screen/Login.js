@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Footer } from '../HeaderFooter/Footer';
 import Register from './Register';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -18,10 +17,12 @@ function Login() {
 
     // event.preventDefult();
 
-    const Submit = () => {
+    const Submit = async(e) => {
+        // e.preventDefult()
+
         console.log(UserName, password);
 
-        // event.preventDefult();
+        
 
         Axios.get('../../db.json')
             .then(response => {
@@ -48,7 +49,6 @@ function Login() {
 
                 </div>
             </form>
-            <Footer />
         </div>
     )
 

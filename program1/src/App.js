@@ -3,6 +3,8 @@ import './App.css';
 import './index.css';
 import './compoent/Login.css';
 import './HeaderFooter/Navbar.css';
+import './compoent/Register.css';
+import './compoent/Home.css';
 import { Footer } from "./HeaderFooter/Footer";
 import Navbar from './HeaderFooter/Navbar';
 import Home from  './Screen/Home';

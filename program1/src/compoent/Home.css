@@ -1,0 +1,27 @@
+
+.booking{
+    position: absolute;
+    padding: 40px;
+    width: 400px;
+    top: 50%;
+    left: 60%;
+    transform: translate(-140%,-50%);
+    background: rgba(12, 12, 12, 0.459);
+    border-radius: 12px;
+    box-shadow: 0 15px 25px rgba(0,0,0,.5);
+    background-size: cover;
+    /* background-clip: content-box; */
+}
+.booking h2 {
+    color: wheat;
+}
+.booking h3{
+    color: white;
+}
+.booking button{
+    width:35%;
+    height: 40px;
+    background-clip:revert;
+    background: transparent;
+
+}
