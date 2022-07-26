@@ -23,5 +23,10 @@
     height: 40px;
     background-clip:revert;
     background: transparent;
+    color: whitesmoke;
 
+}
+.booking button:hover{
+background: white;
+color: black;
 }
