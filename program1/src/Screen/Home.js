@@ -5,10 +5,8 @@ import React from 'react'
 function Home() {
   // const navigate=useNavigate();
 
-  const Booking = () => 
-    alert({
-      message:'success',type:'succes'
-    });
+  const Booking = () => {
+    
    // return(
     //   <div>
     //     <input type='text' placeholder='Phoneno' value='none' required='10 number'/>
@@ -16,7 +14,7 @@ function Home() {
     // )
     // alert("welcome")
     // navigate('/Booking');
-  
+  }
   return (
     <div className='homebody'>
       <div className="booking">
@@ -24,6 +22,12 @@ function Home() {
         <h3> Keep calm and never stop travelling</h3>
         <button id='alert' onClick={Booking}>Book</button>
       </div>
+      <dialog open={true}>
+        <box >
+          <h4>Number Adding</h4>
+          <input type="number" placeholder='Phone no' required="10number"/>
+        </box>
+      </dialog>
       
     </div>
   )
