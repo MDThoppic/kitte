@@ -30,3 +30,44 @@
 background: white;
 color: black;
 }
+dialog button{
+   padding: 4px; 
+   margin: 5px;   
+}
+dialog{
+    border: 0px;
+    border-radius: 12px;
+    margin-top: 5%;
+    width: 20%;
+    height: 50%;
+}
+dialog label{
+    margin-inline-start: 60%;
+    font-size: small;
+    
+   
+
+}
+dialog input{
+    font-variant: full-width;
+    /* padding-inline: 14%; */
+    margin: 3px;
+    height: 20px;
+
+}
+.otpinput{
+    width: 15px;
+    margin-top: 10px;
+    margin-right: 15px;
+    text-align: center;
+    
+}
+/*this input number spin check to hide the input box */
+.otpinput input::-webkit-outer-spin-button,
+         input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}input[type=number]{
+    -moz-appearance: textfield;
+}
+/* ------------------------------- */
