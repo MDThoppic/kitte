@@ -4,7 +4,7 @@ import './index.css';
 import './compoent/Login.css';
 import './HeaderFooter/Navbar.css';
 import './compoent/Register.css';
-import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import { Footer } from "./HeaderFooter/Footer";
 import Navbar from './HeaderFooter/Navbar';
 import Home from  './Screen/Home';
@@ -13,7 +13,6 @@ import Support from './Screen/Support';
 import { Route, Routes } from 'react-router-dom';
 import Login from './Screen/Login';
 import Register from './Screen/Register';
-import Booking from './Screen/Booking';
 
 
 function App() {
@@ -30,7 +29,6 @@ function App() {
         <Route path='/Support' element={<Support />}/>
         <Route path='/Login' element={<Login />}/>
         <Route path='/Login/Register' element={<Register />}/>
-        <Route path='/Booking' element={<Booking />}/>
       </Routes>
       <Footer /> 
     </div>

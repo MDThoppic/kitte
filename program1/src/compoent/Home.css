@@ -53,10 +53,12 @@ dialog input{
     /* padding-inline: 14%; */
     margin: 3px;
     height: 20px;
+    width: full-width;
 
 }
 .otpinput{
-    width: 15px;
+    width: 30px;
+    height: 30px;
     margin-top: 10px;
     margin-right: 15px;
     text-align: center;
@@ -71,3 +73,6 @@ dialog input{
     -moz-appearance: textfield;
 }
 /* ------------------------------- */
+dialog button{
+    padding: 10px;
+}

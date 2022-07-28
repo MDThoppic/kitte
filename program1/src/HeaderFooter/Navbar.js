@@ -13,10 +13,10 @@ function Navbar() {
                  
             <ul className='nav_menu'>
                
-            <NavLink className="link" to="/">Home</NavLink>
-            <NavLink className="link" to="/About">About</NavLink>
-            <NavLink className="link" to="/Support">Support</NavLink>
-            <NavLink className="link" to="/Login">Signin </NavLink>
+            <NavLink className="link  rounded-pill" to="/">Home</NavLink>
+            <NavLink className="link rounded-pill" to="/About">About</NavLink>
+            <NavLink className="link rounded-pill" to="/Support">Support</NavLink>
+            <NavLink className="link rounded-pill" to="/Login">Signin </NavLink>
 
             <input type="search" placeholder='search...' name="search" id="search" /><button type="submit"><i class="fa fa-search"></i></button>
             

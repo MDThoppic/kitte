@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import '../compoent/Home.css';
 // import 'bootstrap';
 // import Booking from './Booking'
-// import { useNavigate } from 'react-router'
+import { Routes, Route,useNavigate } from 'react-router'
 
 function Home() {
-  // const navigate=useNavigate();
+  // location change 
+  const navigate=useNavigate();
 
   // OTP input box 
   const [otp, setotp] = useState(new Array(4).fill(""));
@@ -28,8 +29,8 @@ function Home() {
     //     <input type='text' placeholder='Phoneno' value='none' required='10 number'/>
     //   </div>
     // )
-    // alert("welcome")
-    // navigate('/Booking');
+    alert("welcome")
+    navigate('/Booking');
   }
   return (
     <div className='homebody'>
@@ -38,23 +39,32 @@ function Home() {
         <h3> Keep calm and never stop travelling</h3>
         <button id='alert' onClick={openDialog}>Book</button>
       </div>
-      <dialog open={showDia} onClose={closeDialog}>
+      <dialog className="bg-dark text-white modal-dialog width=device-width was-validated" open={showDia}>
         <box >
-          <h4>Number Adding</h4>
-
-          <input type="number" placeholder='Phone no' required />
-          <label>Resend OTP</label>
+          <div className='modal-header'>
+          <h4 className='modal-title'>Number Adding</h4>
+          <button type='button' className='btn-close ' data-bs-dismiss="modal" onClick={closeDialog} />
+          </div>
+          <div className='modal-body'>
+          <input className="form-control-lg"  type="number" placeholder='Phone no' name="Phone no" required />
+          <div className='invalid-feedback'>place enter the fileld.</div><br/>
           {otp.map(() => {
             return (
-              <input className="otpinput" maxLength="1" type="number" placeholder='0' required />
+              <input className="otpinput  mt-4" maxLength="1" type="number" placeholder='0'  required />             
             )
           })}
-
-          <dialogaction> <button>verify</button>
-            <button onClick={closeDialog}>Cancel</button>
+           <label>Resend OTP</label>
+          </div>
+          <dialogaction>
+             <button className="text-center p- 1 btn btn-success" onClick={Booking}>verify</button>
+            <button className="text-center p-1 btn btn-secondary" onClick={closeDialog}>Cancel</button>
           </dialogaction>
         </box>
       </dialog>
+      <Routes>
+      <Route path='/Booking' element={<Booking />}/>
+      </Routes>
+
 
     </div>
   )
