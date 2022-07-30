@@ -8,14 +8,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(16, 16, 17, 0.452);
+    background: fixed;
+    /* background: rgba(16, 16, 17, 0.452); */
 }
 
 .nav_name {
     font-size: 30px;
     font-weight: 700;
     margin: 15px;
-    color: nth-child(10n);
+    color: black;
 
 }
 
@@ -53,9 +54,9 @@
     width: 130px;
 
 }
-.nav_menu button{
+/* .nav_menu button{
     display: flex;
-}
+} */
  
 /* device change mode */
 @media screen and (max-width:600px){

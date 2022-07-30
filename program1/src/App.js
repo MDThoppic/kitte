@@ -1,12 +1,12 @@
 import React from 'react' //import logo from './logo.svg';
 import './App.css';
-import './index.css';
-import './compoent/Login.css';
-import './HeaderFooter/Navbar.css';
-import './compoent/Register.css';
+// import './index.css';
+// import './compoent/Login.css';
+// import './HeaderFooter/Navbar.css';
+// import './compoent/Register.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Footer } from "./HeaderFooter/Footer";
-import Navbar from './HeaderFooter/Navbar';
+import Header from './HeaderFooter/Header';
 import Home from  './Screen/Home';
 import About from './Screen/About';
 import Support from './Screen/Support';
@@ -20,10 +20,11 @@ function App() {
   return (
     <div className='App'> 
       
-      <Navbar /> 
       {/* <Login />  */}
+      <Header /> 
        
       <Routes>
+        
         <Route path='/' element={<Home />}/>
         <Route path='/About' element={<About />}/>
         <Route path='/Support' element={<Support />}/>

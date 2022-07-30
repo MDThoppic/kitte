@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Register from './Register';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
-// import '../../db.json';
+import { Navigate } from 'react-router'
+
+// import '../api/db.json';
 
 
+// const navigate = useNavigate();
 
 
 
@@ -14,35 +17,53 @@ function Login() {
     const [UserName, setuserName] = useState("");
     const [password, setpassword] = useState("");
 
+    let url = ("http://localhost:8000/holder")
 
     // event.preventDefult();
+    
+    useEffect(()=>{
+        if(localStorage.getItem('user-info')){
+            // Navigate('/home');
+        }
+    },[])
 
-    const Submit = async(e) => {
+    async function Submit(){
         // e.preventDefult()
 
-        console.log(UserName, password);
+        console.warn('item',UserName, password);
+        let data={UserName,password};
 
-        
-
-        Axios.get('../../db.json')
-            .then(response => {
-                console.log(response.data);
-                alert('sucessfull');
-
-            }).catch(err => {
-                window.alert('unscessfull')
-
-                console.log(err);
-            })
-
+       let result=await fetch(url, {
+            // name:  UserName,
+            // password: password
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+                "Accept":'application/json'
+            },
+            body: JSON.stringify(data),
+        });
+        result=await result.json();
+        localStorage.setItem("user-info",JSON.stringify(result))
+            
     }
+
+
+
     return (
         <div>
-            <form className='login' action='Login.js' method='dialog'>
-                <div className='from'>
-                    <h1>login</h1>
-                    <input type="text" placeholder="UserName" value={UserName} id="UserName" required="enter username" onChange={(e) => setuserName(e.target.value)} /><br />
-                    <input type="Password" placeholder="password" value={password} id="password"required="enter password" onChange={(e) => setpassword(e.target.value)} /><br />
+            <form className='form' action='Login.js' method='dialog'>
+                <h1 className='text-dark text-uppercase mb-5'>login</h1>
+                <div className="input_box ms-5 mb-3">
+
+                    <input type="text" placeholder="" value={UserName} id="UserName" required="required" onChange={(e) => setuserName(e.target.value)} />
+                    <span>username</span>
+                </div>
+                <div className='input_box ms-5 mb-3 '>
+                    <input type="Password" placeholder="" value={password} id="password" required="required" onChange={(e) => setpassword(e.target.value)} />
+                    <span>password</span>
+                </div>
+                <div>
                     <button type="submit" onClick={Submit}  >Login</button>
                     <br></br> <br />
                     <Link className="create" to="/login/Register" onClick={<Register />}>Create & Resgiter</Link>

@@ -18,19 +18,19 @@
 .booking h3{
     color: white;
 }
-.booking button{
+/* .btn{
     width:35%;
     height: 40px;
     background-clip:revert;
     background: transparent;
     color: whitesmoke;
 
-}
-.booking button:hover{
+} */
+/* .booking button:hover{
 background: white;
 color: black;
-}
-dialog button{
+} */
+/* dialog button{
    padding: 4px; 
    margin: 5px;   
 }
@@ -50,7 +50,7 @@ dialog label{
 }
 dialog input{
     font-variant: full-width;
-    /* padding-inline: 14%; */
+    /* padding-inline: 14%; 
     margin: 3px;
     height: 20px;
     width: full-width;
@@ -63,7 +63,7 @@ dialog input{
     margin-right: 15px;
     text-align: center;
     
-}
+} */
 /*this input number spin check to hide the input box */
 .otpinput input::-webkit-outer-spin-button,
          input::-webkit-inner-spin-button{
