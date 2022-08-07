@@ -1,6 +1,6 @@
 
 .booking{
-    position: absolute;
+    /* position: absolute; */
     padding: 40px;
     width: 400px;
     top: 50%;
@@ -12,12 +12,13 @@
     background-size: cover;
     /* background-clip: content-box; */
 }
+/* 
 .booking h2 {
     color: wheat;
 }
 .booking h3{
     color: white;
-}
+} */
 /* .btn{
     width:35%;
     height: 40px;

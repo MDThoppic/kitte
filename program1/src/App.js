@@ -13,6 +13,7 @@ import Support from './Screen/Support';
 import { Route, Routes } from 'react-router-dom';
 import Login from './Screen/Login';
 import Register from './Screen/Register';
+import Booking from './Screen/Booking';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path='/Support' element={<Support />}/>
         <Route path='/Login' element={<Login />}/>
         <Route path='/Login/Register' element={<Register />}/>
+        <Route path='/Booking' element={<Booking />} />
       </Routes>
       <Footer /> 
     </div>

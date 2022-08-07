@@ -3,40 +3,37 @@
     padding: 0;
 }
 
-.nav {
+/* .nav {
     height: 60px;
-    display: flex;
+    display: flex-end;
     justify-content: space-between;
     align-items: center;
     background: fixed;
-    /* background: rgba(16, 16, 17, 0.452); */
-}
+    /* background: rgba(16, 16, 17, 0.452); 
+} */
 
-.nav_name {
+/* .nav_name {
     font-size: 30px;
     font-weight: 700;
     margin: 15px;
     color: black;
 
-}
+} */
 
-.nav_menu {
+/* .nav_menu {
     display: flex;
     text-decoration: none;
     justify-content: space-between;
-}
+} */
 
 .link {
-    padding: 4px;
-    text-decoration: none;
-    color: wheat;
+    color:rgb(7, 7, 7);
     word-spacing: 10px;
-    margin-left: 10px;
     /* text-transform: uppercase; */
 }
 
 .link:hover {
-    background-color: black;
+    background-color:black;
     color: white;
     text-transform: uppercase;
     border-radius: 3px;

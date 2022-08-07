@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import Register from './Register';
-import Axios from 'axios';
+// import Axios from 'axios';
 import { Link } from 'react-router-dom';
-import { Navigate } from 'react-router'
+import { useNavigate } from 'react-router'
 
 // import '../api/db.json';
 
 
-// const navigate = useNavigate();
+
 
 
 
@@ -16,36 +16,41 @@ function Login() {
     // const [User,setuser]=useState([]);
     const [UserName, setuserName] = useState("");
     const [password, setpassword] = useState("");
+    const navigate = useNavigate();
+    
 
     let url = ("http://localhost:8000/holder")
 
     // event.preventDefult();
-    
-    useEffect(()=>{
-        if(localStorage.getItem('user-info')){
-            // Navigate('/home');
+
+    useEffect(() => {
+        if (localStorage.getItem('user-info')) {
+
+            alert('successfull');
+            navigate('/Home');
+            
         }
     },[])
 
-    async function Submit(){
-        // e.preventDefult()
+    async function Submit(e) {
+        e.preventDefult();
 
-        console.warn('item',UserName, password);
-        let data={UserName,password};
+        console.log('item', UserName, password);
+        let data = { UserName, password };
 
-       let result=await fetch(url, {
+        let result = await fetch(url, {
             // name:  UserName,
             // password: password
             method: "POST",
             headers: {
                 "content-type": "application/json",
-                "Accept":'application/json'
+                "Accept": 'application/json'
             },
             body: JSON.stringify(data),
         });
-        result=await result.json();
-        localStorage.setItem("user-info",JSON.stringify(result))
-            
+        result = await result.json();
+        localStorage.setItem("user-info", JSON.stringify(result))
+        // navigate('/home');
     }
 
 
