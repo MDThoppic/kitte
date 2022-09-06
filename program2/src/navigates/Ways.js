@@ -12,13 +12,11 @@ function ways() {
           <Route path='/' element={<Login />} />         
           <Route path='/Dashborad' element={<Dashboard />} />                   
         </Routes>
-<<<<<<< HEAD
         
-=======
         <Routes>
           <Route path='/vender/newuser/user' element={<Singin />}/>
         </Routes>
->>>>>>> 50419666effcad38227e99aa673f871b7dc2e274
+
       
     </div>
   );

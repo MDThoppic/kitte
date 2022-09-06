@@ -1,8 +1,5 @@
-<<<<<<< HEAD
+
 import React, { useState } from 'react';
-=======
-import React from 'react';
->>>>>>> 50419666effcad38227e99aa673f871b7dc2e274
 import Routers from '../navigates/Ways'
 import Header from '../component/Nav';
 import { Routes, Route } from 'react-router-dom';
@@ -16,7 +13,7 @@ const{Checked,setChecked}=useState("true")
   return (
     <div>
       <Header />
-<<<<<<< HEAD
+
       <div className="container m-4 ">
         <div className="row d-flex justify-content-left">
           <div className="col-md-5  p-4 m-5 border">
@@ -132,7 +129,7 @@ const{Checked,setChecked}=useState("true")
                 <input type="checkbox" placeholder="" className="m-2"  onChange={()=>setChecked(!Checked)} />
                 <label>Booking for close one</label>
                 {
-                  show?
+                  Checked?
                   <input type="text" />
                   :null
                 }
@@ -152,9 +149,7 @@ const{Checked,setChecked}=useState("true")
           </div>
         </div>
       </div>
-=======
-      <p>Hello world</p>
->>>>>>> 50419666effcad38227e99aa673f871b7dc2e274
+
     </div>
   )
 }
