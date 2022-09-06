@@ -1,21 +1,40 @@
-import {React,useState} from 'react';
-import { useHistory} from 'react-router';
+import React, { useEffect, useState } from 'react';
+// import { useHistory } from 'react-router-dom';
 import Dashboard from '../pages/Dashboard';
+import { Navigate } from 'react-router';
+import { useNavigate } from 'react-router';
+import axios from 'axios';
 
 
-const LoginForm=()=> {
+const LoginForm = () => {
+
+  // let loginurl = ("http://localhost:3000/login")
+
+
 
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [passwordError, setpasswordError] = useState("");
   const [emailError, setemailError] = useState("");
+  const navigate = useNavigate();
+  // const history = useHistory();
   // const  history  = useHistory();
-  
+  let log_URL='http://localhost:8000/login';
+
+
+  useEffect(() => {
+    if (localStorage.getItem('user-info')) {
+
+      navigate('/Dashborad');
+
+    }
+  }, [])
+
 
   const handleValidation = (event) => {
     let formIsValid = true;
-    console.log("hello");
-    
+    // console.log("hello");
+
 
     if (!email.match(/^\w+@[a-zA-Z_0-9]+?\.[a-zA-Z]{2,3}$/)) {
       formIsValid = false;
@@ -36,22 +55,46 @@ const LoginForm=()=> {
       setpasswordError("");
       formIsValid = true;
     }
-    
-    console.log(email,password);
+
+    // console.log(email, password);
+    // signsubmit();
+
     // history.push("/Dashboard"); 
     return formIsValid;
-    
+
   };
+
+  async function signsubmit(){
+    let item = { email, password };
+    console.log(email,password);
+      await fetch(log_URL,{
+        email:email,
+        password:password
+      })
+      .then((res)=>{
+        console.log(res.data)
+        navigate('/Dashborad');
+        alert('successfull login')
+        })
+    .catch((error)=>console.log(error))
+      
+    
+  }
+  
 
   const loginSubmit = (e) => {
     e.preventDefault();
-    handleValidation();
-    
-  };
+    if (handleValidation()) {
+      signsubmit();
+      // navigate("/Dashborad");
+    }
+
+  }
 
   return (
+
     <div className="">
-      
+
       <div className="container ">
         <div className="row d-flex justify-content-center">
           <div className="col-md-5  p-5 m-5 border">
@@ -63,14 +106,14 @@ const LoginForm=()=> {
                   className="form-control "
                   id="EmailInput"
                   name="EmailInput"
-                  aria-describedby="emailHelp"
+                  // aria-describedby="emailHelp"
                   placeholder="Enter email"
                   onChange={(event) => setEmail(event.target.value)}
                 />
                 <small id="emailHelp" className="text-danger form-text">
                   {emailError}
                 </small>
-              </div><br/>
+              </div><br />
               <div className="form-group">
                 <label>Password</label>
                 <input
@@ -83,7 +126,7 @@ const LoginForm=()=> {
                 <small id="passworderror" className="text-danger form-text">
                   {passwordError}
                 </small>
-              </div><br/>
+              </div><br />
               <div className="form-group form-check">
                 <input
                   type="checkbox"
@@ -91,7 +134,7 @@ const LoginForm=()=> {
                   id="exampleCheck1"
                 />
                 <label className="form-check-label">Check me </label>
-              </div><br/>
+              </div><br />
               <button type="submit" className="btn btn-primary d-flex flex-row-reverse">
                 Submit
               </button>
