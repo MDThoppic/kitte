@@ -1,0 +1,19 @@
+{
+  "login": [
+    {
+      "email": "mohamud@gmail.com",
+      "passoword": "Mohamud2611",
+      "id": 1
+    },
+    {
+      "email": "mohamud2611@gmail.com",
+      "password": "123456789",
+      "id": 2
+    },
+    {
+      "email": "mohamud2611@gmail.com",
+      "password": "123456734",
+      "id": 3
+    }
+  ]
+}
