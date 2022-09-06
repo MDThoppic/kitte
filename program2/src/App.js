@@ -6,7 +6,10 @@ import Header from './component/Nav';
 import Dashboard from './pages/Dashboard';
 import { Route, Routes} from 'react-router-dom';
 import Ways from './navigates/Ways';
+<<<<<<< HEAD
 import Locate from './navigates/Locate';
+=======
+>>>>>>> 50419666effcad38227e99aa673f871b7dc2e274
 
 
 function App() {
@@ -22,8 +25,11 @@ function App() {
         
         {/* </Routes> */} 
         <Ways />
+<<<<<<< HEAD
       <Locate />
 
+=======
+>>>>>>> 50419666effcad38227e99aa673f871b7dc2e274
     </div>
   );
 }

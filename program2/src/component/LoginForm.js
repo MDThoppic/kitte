@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+<<<<<<< HEAD
 // import { useHistory } from 'react-router-dom';
 import Dashboard from '../pages/Dashboard';
 import { Navigate } from 'react-router';
@@ -11,12 +12,32 @@ const LoginForm = () => {
   // let loginurl = ("http://localhost:3000/login")
 
 
+=======
+import { useHistory } from 'react-router';
+import Dashboard from '../pages/Dashboard';
+import { Navigate } from 'react-router';
+import { useNavigate } from 'react-router';
+
+
+const LoginForm = () => {
+
+  // let loginurl = ("http://localhost:3000/login")
+
+  // useEffect(() => {
+  //   if (localStorage.getItem('user-info')) {
+
+  //     navigate('/Dashborad');
+
+  //   }
+  // }, [])
+>>>>>>> 50419666effcad38227e99aa673f871b7dc2e274
 
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [passwordError, setpasswordError] = useState("");
   const [emailError, setemailError] = useState("");
   const navigate = useNavigate();
+<<<<<<< HEAD
   // const history = useHistory();
   // const  history  = useHistory();
   let log_URL='http://localhost:8000/login';
@@ -29,11 +50,18 @@ const LoginForm = () => {
 
     }
   }, [])
+=======
+  // const  history  = useHistory();
+>>>>>>> 50419666effcad38227e99aa673f871b7dc2e274
 
 
   const handleValidation = (event) => {
     let formIsValid = true;
+<<<<<<< HEAD
     // console.log("hello");
+=======
+    console.log("hello");
+>>>>>>> 50419666effcad38227e99aa673f871b7dc2e274
 
 
     if (!email.match(/^\w+@[a-zA-Z_0-9]+?\.[a-zA-Z]{2,3}$/)) {
@@ -56,7 +84,11 @@ const LoginForm = () => {
       formIsValid = true;
     }
 
+<<<<<<< HEAD
     // console.log(email, password);
+=======
+    console.log(email, password);
+>>>>>>> 50419666effcad38227e99aa673f871b7dc2e274
     // signsubmit();
 
     // history.push("/Dashboard"); 
@@ -64,6 +96,7 @@ const LoginForm = () => {
 
   };
 
+<<<<<<< HEAD
   async function signsubmit(){
     let item = { email, password };
     console.log(email,password);
@@ -88,6 +121,27 @@ const LoginForm = () => {
       signsubmit();
       // navigate("/Dashborad");
     }
+=======
+  const signsubmit = async () => {
+    alert("welcome to picker")
+    let item = { email, password };
+    let result = await fetch("http://localhost:3000/login", {
+      method: 'POST',
+      headers: {
+        "context-type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(item)
+    });
+    result = await result.JSON();
+    localStorage.setItem(JSON.stringify(result))
+    navigate("/Dashborad");
+  }
+
+  const loginSubmit = (e) => {
+    e.preventDefault();
+    handleValidation();
+>>>>>>> 50419666effcad38227e99aa673f871b7dc2e274
 
   }
 

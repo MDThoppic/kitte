@@ -1,5 +1,8 @@
 import React,{useState} from 'react'
+<<<<<<< HEAD
 import Headers from './Nav';
+=======
+>>>>>>> 50419666effcad38227e99aa673f871b7dc2e274
 
 export default function Singin() {
     const [password, setPassword] = useState("");
@@ -8,9 +11,13 @@ export default function Singin() {
         console.log("weclome");
     }
     return (
+<<<<<<< HEAD
        
         <div bgcolor="red">
              <Headers />
+=======
+        <div bgcolor="red">
+>>>>>>> 50419666effcad38227e99aa673f871b7dc2e274
             <div className="container ">
                 <div className="row d-flex justify-content-center">
                     <div className="col-md-5  p-5 m-5 border">
