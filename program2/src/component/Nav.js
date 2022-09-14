@@ -1,32 +1,23 @@
 import React from 'react'
 import { Navbar, Container, NavDropdown, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
- 
+
 
 const Header = () => {
     return (
         <div>
-            <Navbar bg="light"  expand="lg">
+            <Navbar bg="light" expand="lg">
                 <Container>
-                    <Navbar.Brand href="/Dashborad">Dashboard</Navbar.Brand>
-                    <Navbar.Brand href="/">Dashboard</Navbar.Brand>
+                    <Navbar.Brand href="/Dashboard">Dashboard</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            {/* <Nav.Link href="#home">Vendar</Nav.Link> */}
-                            {/* <Nav.Link href="#link">Link</Nav.Link> */}
                             <NavDropdown title="Vendar" id="basic-nav-dropdown">
                                 <NavDropdown title="create new user" className='dropdown dropend text-md'>
                                     <NavDropdown.Item> <Link className='text-decoration-none text-dark' to="/vender/newuser/user">newuser</Link></NavDropdown.Item>
                                     <NavDropdown.Item> <Link className='text-decoration-none text-dark' to="">InActive</Link></NavDropdown.Item>
                                     <NavDropdown.Item> <Link className='text-decoration-none text-dark' to="">Deactive</Link></NavDropdown.Item>
                                     <NavDropdown.Item> <Link className='text-decoration-none text-dark' to="">Active</Link></NavDropdown.Item>
-
-                                    <NavDropdown.Item href=""> <NavLink to="/vender/newuser/user">Action</NavLink></NavDropdown.Item>
-                                    <NavDropdown.Item href="/vender/newuser/usergram2">Action</NavDropdown.Item>
-                                    <NavDropdown.Item href="">Action</NavDropdown.Item>
-
                                 </NavDropdown>
                                 <NavDropdown title="Car" className='dropdown dropend dropright  '>
                                     <NavDropdown.Item> <Link className='text-decoration-none text-dark' to="">newCar</Link></NavDropdown.Item>
@@ -54,7 +45,7 @@ const Header = () => {
                             </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>
-                    <button type="button" className="btn btn-light" onClick=''>Logout</button>
+                    <button type="button" className="btn btn-light" >Logout</button>
                 </Container>
             </Navbar>
 

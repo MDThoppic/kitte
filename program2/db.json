@@ -4,14 +4,16 @@
       "email": "mohamud@gmail.com",
       "passoword": "Mohamud",
       "id": 1
-    },
+    }
+  ],
+  "booking": [
     {
       "email": "mohamud@gmail.com",
-<<<<<<< HEAD
-      "passoword": "Mohamud2611",
-=======
       "passoword": "Mohamud",
->>>>>>> 50419666effcad38227e99aa673f871b7dc2e274
+      "id": 1
+    },
+    {
+      "data": {},
       "id": 2
     }
   ]

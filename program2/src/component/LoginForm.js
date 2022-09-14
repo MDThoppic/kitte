@@ -1,48 +1,31 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { useHistory } from 'react-router';
-import Dashboard from '../pages/Dashboard';
-import { Navigate } from 'react-router';
 import { useNavigate } from 'react-router';
 
 
-export default function LoginForm ()  {
+export default function LoginForm() {
 
-  // let loginurl = ("http://localhost:3000/login")
 
-  // useEffect(() => {
-  //   if (localStorage.getItem('user-info')) {
-
-  //     navigate('/Dashborad');
-
-  //   }
-  // }, [])
 
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [passwordError, setpasswordError] = useState("");
   const [emailError, setemailError] = useState("");
   const navigate = useNavigate();
-  // const history = useHistory();
-  // const  history  = useHistory();
-  let log_URL='http://localhost:8000/login';
+  let log_URL = 'http://localhost:8000/login';
 
 
   useEffect(() => {
     if (localStorage.getItem('user-info')) {
 
-      navigate('/Dashborad');
+      navigate('/Dashboard');
 
     }
   }, [])
-  // const  history  = useHistory();
 
 
   const handleValidation = (event) => {
     let formIsValid = true;
-    // console.log("hello");
     console.log("hello");
-
 
     if (!email.match(/^\w+@[a-zA-Z_0-9]+?\.[a-zA-Z]{2,3}$/)) {
       formIsValid = false;
@@ -64,59 +47,34 @@ export default function LoginForm ()  {
       formIsValid = true;
     }
 
-    // console.log(email, password);
     console.log(email, password);
-    // signsubmit();
 
-    // history.push("/Dashboard"); 
     return formIsValid;
 
   };
 
-  async function signsubmit(){
+  async function signsubmit() {
     let item = { email, password };
-    console.log(email,password);
-      await fetch(log_URL,{
-        email:email,
-        password:password
-      })
-      .then((res)=>{
+    console.log(item);
+    await fetch(log_URL, {
+      item
+    })
+      .then((res) => {
         console.log(res.data)
-        navigate('/Dashborad');
+        navigate('/Dashboard');
         alert('successfull login')
-        })
-    .catch((error)=>console.log(error))
-      
-    
+      })
+      .catch((error) => console.log(error))
+
+
   }
+
+
   
-
-  // const loginSubmit = (e) => {
-  //   e.preventDefault();
-  //   if (handleValidation()) {
-  //     signsubmit();
-  //     // navigate("/Dashborad");
-  //   }
-
-  // const signsubmit = async () => {
-  //   alert("welcome to picker")
-  //   let item = { email, password };
-  //   let result = await fetch("http://localhost:3000/login", {
-  //     method: 'POST',
-  //     headers: {
-  //       "context-type": "application/json",
-  //       "Accept": "application/json"
-  //     },
-  //     body: JSON.stringify(item)
-  //   });
-  //   result = await result.JSON();
-  //   localStorage.setItem(JSON.stringify(result))
-  //   navigate("/Dashborad");
-  // }
 
   const loginSubmit = (e) => {
     e.preventDefault();
-    if(handleValidation()){
+    if (handleValidation()) {
       signsubmit();
     }
 
@@ -174,6 +132,6 @@ export default function LoginForm ()  {
         </div>
       </div>
     </div>
-  
+
   );
 }

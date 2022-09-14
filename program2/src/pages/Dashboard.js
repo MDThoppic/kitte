@@ -1,14 +1,57 @@
 
 import React, { useState } from 'react';
-import Routers from '../navigates/Ways'
 import Header from '../component/Nav';
-import { Routes, Route } from 'react-router-dom';
-import Login from './Login';
-import Locate from '../navigates/Locate';
+import axios from 'axios';
 
 export default function Dashboard() {
 
-const{Checked,setChecked}=useState("true")
+  const [data, setdatas] = useState({ values });
+  
+  let log_URL1 = ("http://localhost:8000/Booking");
+
+  const [Checked, setChecked] = useState(false);
+
+  const values = {
+    from: "",
+    to: "",
+    date: '',
+    time: '',
+    phone: '',
+    name: "",
+    women: '',
+    Comment: ''
+  }
+
+  
+  let bookingdata = async (e) => {
+
+    console.log(data);
+    await axios.post(log_URL1, {
+      data
+    })
+      .then((res) => {
+        console.log(res.data)
+        alert('successfull Booking')
+      })
+      .catch((error) => console.log(error))
+
+  }
+
+  const Datahandle = (e) => {
+    // e.preventDefault();
+
+    console.log(data);
+    bookingdata();
+
+  }
+  const changeHolder = e => {
+    setdatas({
+      data,
+      [e.target.name]:
+        e.target.value
+    });
+
+  }
 
   return (
     <div>
@@ -17,15 +60,17 @@ const{Checked,setChecked}=useState("true")
       <div className="container m-4 ">
         <div className="row d-flex justify-content-left">
           <div className="col-md-5  p-4 m-5 border">
-            <form className='' onClick=''>
+            <form className='' >
               <h3 className='text-center '>BOOKING</h3>
               <div className="mb-3">
                 <label>---------PickupAddress---------</label>
                 <input
                   type="text"
-                  className="form-control"
+                  className="form-control "
                   placeholder="From"
-                // onChange={(event) => setEmail(event.target.value)}
+                  name='from'
+                  onChange={changeHolder}
+                  required="enter"
                 />
               </div>
               <div className="mb-3">
@@ -34,7 +79,9 @@ const{Checked,setChecked}=useState("true")
                   type="text"
                   className="form-control"
                   placeholder="TO"
-                // onChange={(event) => setEmail(event.target.value)}
+                  name='to'
+                  onChange={changeHolder}
+                  required="enter"
                 />
               </div>
               <div className="mb-3">
@@ -45,34 +92,41 @@ const{Checked,setChecked}=useState("true")
                   type="date"
                   className="me-4"
                   placeholder=""
-                // onChange={(event) => setEmail(event.target.value)}
+                  name='date'
+                  required="enter"
+                  onChange={changeHolder}
                 />
                 <input
                   type="time"
                   className=""
                   placeholder=""
-                // onChange={(event) => setEmail(event.target.value)}
-                />
+                  name='time'
+                  required="enter"
+                  onChange={changeHolder} />
               </div>
-              <div className="mb-3">
-                <label>Select Trip Type</label>
-              </div>
-              <div className='mb-3 text-center btn-group btn-group-md '>
-                <button type="button" className=" ">
-                  one way
-                </button>
-                <button type="button" className=" " >
-                  Round
-                </button>
-                <div id="return" className='collapse'>
-                  <input
-                    type="date"
-                    className="me-4"
-                    placeholder=""
-                  // onChange={(event) => setEmail(event.target.value)}
-                  />
+              <div>
+                <div className="mb-3">
+                  <label>Select Trip Type</label>
                 </div>
+                <div className='mb-3 text-center btn-group btn-group-md '>
+                  <button type="button" className=" ">
+                    one way
+                  </button>
+                  <button type="button" className=" " >
+                    Round
+                  </button>
+                  <div id="return" className='collapse'>
+                    <input
+                      type="date"
+                      className="me-4"
+                      placeholder=""
+                      required="enter"
 
+                    // onChange={(event) => setEmail(event.target.value)}
+                    />
+                  </div>
+
+                </div>
               </div>
               <div className='text-center'>
                 <label className='me-3'>from---to</label>
@@ -118,24 +172,59 @@ const{Checked,setChecked}=useState("true")
                 <label>seaters:5</label>
               </div>
               <div className='mt-3 '>
-                <input type="text" placeholder="comment" className="form-control border-0 border-bottom border-dark" />
+                <input type="text"
+                  placeholder="comment"
+                  className="form-control border-0 border-bottom border-dark"
+                  name='comment'
+                  onChange={changeHolder}
+                  required="enter"
+                />
               </div>
               <div className='mt-3 '>
-                <input type="checkbox" placeholder="" className=" m-2" />
+                <input type="checkbox"
+                  placeholder=""
+                  className=" m-2"
+                  name='women'
+                  onChange={changeHolder}
+                  required="enter"
+                />
                 <label>Single Women</label>
                 <span className='h7'>(additional safty)</span>
               </div>
               <div className='mt-3 '>
-                <input type="checkbox" placeholder="" className="m-2"  onChange={()=>setChecked(!Checked)} />
-                <label>Booking for close one</label>
+                <input type="checkbox"
+                  placeholder=""
+                  className="m-2"
+                  value={Checked}
+                  onChange={() => setChecked(!Checked)}
+                  required="enter"
+                />
+                <label>Booking
+                  for close one</label>
                 {
-                  Checked?
-                  <input type="text" />
-                  :null
+                  Checked ?
+                    <div className='border m-3'>
+                      <div className=' m-5'>
+                        <input type="number"
+                          className='form-control'
+                          placeholder='Enter his/her Phone number'
+                          name='phone'
+                          onChange={changeHolder}
+                          required="enter"
+                        />
+                        <input type="text"
+                          className="form-control mt-4"
+                          placeholder='Enter his/her Name'
+                          name='name'
+                          onChange={changeHolder}
+                          required="enter"
+                        />
+                      </div>
+                    </div> : null
                 }
               </div>
               <div className="d-grid mt-5">
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" className="btn btn-primary" onClick={Datahandle}>
                   Submit
                 </button>
               </div>
